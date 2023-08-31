@@ -4,14 +4,10 @@ import json
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
-app = Flask(__name__, static_url_path='', static_folder='build')
+app = Flask(__name__, static_url_path='', static_folder='client/build')
 CORS(app)
 CORS(app, origins=['http://localhost:3000'])
 
-# import pyttsx3
-# from gtts import gTTS
-# import pygame
-# import speech_recognition as sr
 import nltk
 nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
