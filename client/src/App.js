@@ -10,7 +10,7 @@ function App() {
     <div className="App">
    <Routes>
    <Route exact path="/" element={ <Home values={value} setValues={setValue}/>}/>
-   <Route path="/result" element={<Result values={value} setValues={setValue}/>}/>
+   {/* <Route path="/result" element={<Result values={value} setValues={setValue}/>}/> */}
   </Routes>
     </div>
     </BrowserRouter>

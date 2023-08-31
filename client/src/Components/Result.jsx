@@ -16,7 +16,7 @@ export default function Result() {
       { sender: 'User', text: message }
     ]);
     axios
-      .post('http://127.0.0.1:5000/chat', { message: message })
+      .post('/chat', { message: message })
       .then((res) => {
         console.log(res.data);
         const responseMessage = res.data.response;
@@ -37,8 +37,8 @@ export default function Result() {
     <div>
       <div className='container my-4'>
         <div className='mb-3'>
-             <img src='https://www.medicaps.ac.in/sitefront/university/assets/img/logo_transparent.png' alt='medicaps' className='my-4 alert alert-dark'  style={{ borderRadius:"4px",padding:"10px"}}/>
-     <h2 for="exampleFormControlTextarea1" class="form-label text">WORD SENSE DISAMBIGUATION IN HINDI LANGUAGE USING MACHINE LEARNING</h2>
+             {/* <img src='https://www.medicaps.ac.in/sitefront/university/assets/img/logo_transparent.png' alt='medicaps' className='my-4 alert alert-dark'  style={{ borderRadius:"4px",padding:"10px"}}/>
+     <h2 for="exampleFormControlTextarea1" class="form-label text">WORD SENSE DISAMBIGUATION IN HINDI LANGUAGE USING MACHINE LEARNING</h2> */}
    <br/>
    {/* <div className='row'>
    <h2 for="exampleFormControlTextarea1" class="form-label col col-lg-3 my-4" style={{paddingTop:"40px"}}>Input Sentence:</h2>

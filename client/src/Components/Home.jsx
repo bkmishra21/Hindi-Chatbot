@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './home.css'
+import Result from './Result';
 export default function Home(props) {
     const submitvalue=async ()=>{
        alert("let's see Solution")
@@ -20,7 +21,7 @@ export default function Home(props) {
   return (
     <div className='container my-4'>
 <div class="mb-3">
-    <img src='https://www.medicaps.ac.in/sitefront/university/assets/img/logo_transparent.png' alt='medicaps' className='my-4 alert alert-dark'  style={{ borderRadius:"4px",padding:"10px"}}/>
+    <img src='./medicapslogo.png'  alt='medicaps' className='my-4 alert alert-dark'  style={{ borderRadius:"4px",padding:"10px"}}/>
     <h2 for="exampleFormControlTextarea1" class="form-label text">WORD SENSE DISAMBIGUATION IN HINDI LANGUAGE USING MACHINE LEARNING</h2>
   <br/>
   {/* <div className='row'>
@@ -30,7 +31,7 @@ export default function Home(props) {
                onChange={ handleChange } rows="7"></textarea>
   </div>
   <br/> */}
-  <a className='btn btn-success mx-3' href="/result" >Go To Next Page</a>
+  {/* <a className='btn btn-success mx-3' href="/result" >Go To Next Page</a> */}
 </div>
 <br/>
 <div className='row'>
@@ -52,6 +53,7 @@ export default function Home(props) {
     <br/>
   </div>
 </div>
+<Result values={props.value} setValues={props.setValue}/>
       </div>
   )
 }
