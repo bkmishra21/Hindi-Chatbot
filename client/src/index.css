@@ -1,4 +1,5 @@
 body {
+  height: 90vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -57,7 +58,8 @@ code {
 
 /* Basic styling for the chat app */
 .chat-app {
-  width: 80%;
+  height: 80vh;
+  width: 90%;
   margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -76,7 +78,7 @@ code {
   color: #282c34;
   padding: 10px;
   overflow-y: auto;
-  max-height: 300px;
+  height: 60vh;
 }
 
 .message {
@@ -128,3 +130,24 @@ code {
   align-items: left;
 }
 
+.float-chat-icon{
+  /* display: fixed; */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 125%;  
+}
+
+.float-chat-icon img{
+  border-radius: 125%;
+  width: 60px;
+  height: 60px;
+}
+
+
+.chat-bot-box{
+  /* position: fixed; */
+  width: 100%;
+  /* top: 40px; */
+  margin: 10vh 0vh;
+}
