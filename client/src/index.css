@@ -146,7 +146,8 @@ code {
 
 
 .chat-bot-box{
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
-  top: 40px;
+  /* top: 40px; */
+  margin: 10vh 0vh;
 }

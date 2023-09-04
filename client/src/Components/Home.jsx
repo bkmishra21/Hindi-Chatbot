@@ -18,7 +18,7 @@ export default function Home(props) {
           [name]: value
       })
   }
-  const [bot, setbot] = useState(false);
+  const [bot, setbot] = useState(true);
   return (
     <div>
     <div className='container my-4'>
@@ -57,7 +57,7 @@ export default function Home(props) {
 </div>
       </div>
 {bot?<Result values={props.value} setValues={props.setValue}/>:null}
-<button className='float-chat-icon' onClick={()=>{setbot(!bot)}}><img src='https://img.icons8.com/?size=512&id=119446&format=png'/></button>
+{/* <button className='float-chat-icon' onClick={()=>{setbot(!bot)}}><img src='https://img.icons8.com/?size=512&id=119446&format=png'/></button> */}
       </div>
   )
 }
