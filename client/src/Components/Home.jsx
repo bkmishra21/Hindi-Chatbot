@@ -18,10 +18,12 @@ export default function Home(props) {
           [name]: value
       })
   }
+  const [bot, setbot] = useState(false);
   return (
+    <div>
     <div className='container my-4'>
 <div class="mb-3">
-    <img src='./medicapslogo.png'  alt='medicaps' className='my-4 alert alert-dark'  style={{ borderRadius:"4px",padding:"5px"}}/>
+    <img src='./medicapslogo.png'  alt='medicaps' className='my-4 alert alert-dark'  style={{ borderRadius:"4px",padding:"10px"}}/>
     <h2 for="exampleFormControlTextarea1" class="form-label text">WORD SENSE DISAMBIGUATION IN HINDI LANGUAGE USING MACHINE LEARNING</h2>
   <br/>
   {/* <div className='row'>
@@ -53,7 +55,9 @@ export default function Home(props) {
     <br/>
   </div>
 </div>
-<Result values={props.value} setValues={props.setValue}/>
+      </div>
+{bot?<Result values={props.value} setValues={props.setValue}/>:null}
+<button className='float-chat-icon' onClick={()=>{setbot(!bot)}}><img src='https://img.icons8.com/?size=512&id=119446&format=png'/></button>
       </div>
   )
 }

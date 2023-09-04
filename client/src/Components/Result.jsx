@@ -41,10 +41,10 @@ export default function Result() {
   }, [messages]);
 
   return (
-    <div>
-      <div className='container my-4 bot-main-box' style={{display:"fixed"}}>
+    <div className='chat-bot-box'>
+      <div className='container my-4'>
         <div className='mb-3'>
-          <div className="chat-app">
+          <div className="chat-app"  style={{backgroundColor:"white"}}>
             <div className="chat-header">
               <h1>Hindi Chatbot</h1>
             </div>

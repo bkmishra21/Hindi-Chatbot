@@ -217,7 +217,7 @@ def chat():
     response = Main(message)
 
     return jsonify({"response": response})
-    # return "hi"
+    # return jsonify({"response": "response"})
 
 # @app.route('/')
 # def homepage():
