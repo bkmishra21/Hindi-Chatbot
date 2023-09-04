@@ -1,17 +1,13 @@
 import numpy as np
 import random
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='client/build')
 CORS(app)
 CORS(app, origins=['http://localhost:3000'])
 
-# import pyttsx3
-# from gtts import gTTS
-# import pygame
-# import speech_recognition as sr
 import nltk
 nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
@@ -213,7 +209,6 @@ def Main(sentence):
 
 @app.route('/chat',methods=["POST"])
 def chat():
-
     data = request.json  # Assuming JSON input containing 'message'
     message = data['message']
     # print("DATA ",data)
@@ -223,6 +218,22 @@ def chat():
 
     return jsonify({"response": response})
     # return "hi"
+
+# @app.route('/')
+# def homepage():
+#     return "Homepage"
+
+@app.route('/static/userprofile/<path:filename>')
+def get_photo(filename):
+    return send_from_directory('static/userprofile', filename)
+
+@app.route('/',defaults={'path':''})
+def serve(path):
+    return send_from_directory(app.static_folder,'index.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return send_from_directory(app.static_folder,'index.html')
 
 # Start the Flask app
 if __name__ == '__main__':

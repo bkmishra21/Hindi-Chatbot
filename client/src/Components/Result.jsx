@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
 export default function Result() {
   const [messages, setMessages] = useState([
     { sender: 'User', text: "हैलो" },
-    { sender: 'Bot', text:"नमस्कार, मैं कैसे मदद कर सकता हूं?" }
+    { sender: 'Bot', text: "नमस्कार, मैं कैसे मदद कर सकता हूं?" }
     // You can add more messages here
   ]);
 
   const [message, setMessage] = useState('');
+  const messagesContainerRef = useRef(null);
 
   const submit = () => {
     setMessages((prevMessages) => [
@@ -16,7 +17,7 @@ export default function Result() {
       { sender: 'User', text: message }
     ]);
     axios
-      .post('http://127.0.0.1:5000/chat', { message: message })
+      .post('/chat', { message: message })
       .then((res) => {
         console.log(res.data);
         const responseMessage = res.data.response;
@@ -33,33 +34,33 @@ export default function Result() {
       });
   };
 
+  useEffect(() => {
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <div>
       <div className='container my-4'>
         <div className='mb-3'>
-             <img src='https://www.medicaps.ac.in/sitefront/university/assets/img/logo_transparent.png' alt='medicaps' className='my-4 alert alert-dark'  style={{ borderRadius:"4px",padding:"10px"}}/>
-     <h2 for="exampleFormControlTextarea1" class="form-label text">WORD SENSE DISAMBIGUATION IN HINDI LANGUAGE USING MACHINE LEARNING</h2>
-   <br/>
-   {/* <div className='row'>
-   <h2 for="exampleFormControlTextarea1" class="form-label col col-lg-3 my-4" style={{paddingTop:"40px"}}>Input Sentence:</h2>
-   <br/>
-   <textarea class="form-control mx-4 col" id="exampleFormControlTextarea1"  type="text" name="text"                placeholder="Enter Text Here"
-                 rows="7"></textarea>
-   </div>
-   <br/>
-   <a className='btn btn-success mx-3' onClick={()=>{ alert("submited") }} >Submit</a> */}
           <div className="chat-app">
             <div className="chat-header">
               <h1>Hindi Chatbot</h1>
             </div>
-            <div className="chat-messages">
+            <div className="chat-messages" ref={messagesContainerRef}>
               {messages.map((message, index) => (
                 <div className="message row" key={index}>
-                  <div className='col row'><div className='col' style={{textAlign:"end",paddingTop:"20px"}}><div className="message-sender">{message.sender}</div></div>
-                    <div className='col avtar-main-box'>{message.sender==="Bot"?<img className='avtar' src="./bot.jpg" alt='user-bot'/>:<img className='avtar' src="./userimg.jpg" alt='user-bot'/>}</div></div>
+                  <div className='col row'>
+                    <div className='col' style={{ textAlign: "end", paddingTop: "20px" }}>
+                      <div className="message-sender">{message.sender}</div>
+                    </div>
+                    <div className='col avtar-main-box'>
+                      {message.sender === "Bot" ? <img className='avtar' src="./bot.jpg" alt='user-bot' /> : <img className='avtar' src="./userimg.jpg" alt='user-bot' />}
+                    </div>
+                  </div>
                   <div className='col'>
-                  {/* <div className="message-sender">{message.sender}</div> */}
-                  <div className="message-text">{message.text}</div>
+                    <div className="message-text">{message.text}</div>
                   </div>
                 </div>
               ))}
@@ -74,7 +75,6 @@ export default function Result() {
               <button onClick={submit}>Send</button>
             </div>
           </div>
-
         </div>
       </div>
     </div>
