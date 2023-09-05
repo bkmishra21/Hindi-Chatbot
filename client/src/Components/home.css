@@ -131,9 +131,9 @@
     height: 62vh;
 }
 
-/* .message{
+.message{
     display: flex;
-} */
+}
 
 .written-message {
     margin: 4px 0;
@@ -145,11 +145,16 @@
 
 .whose-msg{
     display: flex;
-    margin: 0 5px;
+    /* margin: 0 5px; */
+    margin: 4px 0;
+    padding: 5px 10px;
+    /* font-size: 1rem; */
+    align-items: center;
 }
 
 .whose-msg h2{
-    font-size: 0.7rem;
+    font-size: 1rem;
+    /* padding: 0.1rem; */
 }
 
 .chat-input {
