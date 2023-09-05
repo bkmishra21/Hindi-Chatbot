@@ -55,11 +55,11 @@ export default function Result() {
                 {/* <div className="message-sender">{message.sender}</div> */}
                 {/* {message.sender === "Bot" ? {backgroundColor:'grey'} : {backgroundColor:'green'}} */}
                 {/* </div> */}
+                <div className="whose-msg">
+                  {message.sender === "Bot" ? <h2>Bot &nbsp;</h2> : <h2>User</h2> }
+                </div>
                 <div className='written-message'>
                   <div className="message-text">{message.text}</div>
-                </div>
-                <div className="whose-msg">
-                  {message.sender === "Bot" ? <h2>bot</h2> : <h2>user</h2> }
                 </div>
               </div>
             ))}
