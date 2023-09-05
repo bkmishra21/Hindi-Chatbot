@@ -6,8 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+  background-color: #fff;
   color: bisque;
+  color: #000;
 }
 
 code {
@@ -57,97 +58,3 @@ code {
 /* Reset some default styles */
 
 /* Basic styling for the chat app */
-.chat-app {
-  height: 80vh;
-  width: 90%;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.chat-header {
-  background-color: #3498db;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-.chat-messages {
-  color: #282c34;
-  padding: 10px;
-  overflow-y: auto;
-  height: 60vh;
-}
-
-.message {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f5f5f5;
-}
-
-.message-sender {
-  font-weight: bold;
-}
-
-.chat-input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #f5f5f5;
-}
-
-.chat-input input {
-  flex-grow: 1;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.chat-input button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.avtar{
-
-  border: 2px solid black;
-  border-radius: 125%;
-  width: 60px;
-  height: 60px;
-}
-.avtar-main-box{
-  display: flex;
-  justify-content: left;
-  align-items: left;
-}
-
-.float-chat-icon{
-  /* display: fixed; */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 125%;  
-}
-
-.float-chat-icon img{
-  border-radius: 125%;
-  width: 60px;
-  height: 60px;
-}
-
-
-.chat-bot-box{
-  /* position: fixed; */
-  width: 100%;
-  /* top: 40px; */
-  margin: 10vh 0vh;
-}

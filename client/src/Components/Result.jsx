@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import './home.css'
 
 export default function Result() {
   const [messages, setMessages] = useState([
@@ -41,39 +42,36 @@ export default function Result() {
   }, [messages]);
 
   return (
-    <div className='chat-bot-box'>
-      <div className='container my-4'>
-        <div className='mb-3'>
-          <div className="chat-app"  style={{backgroundColor:"white"}}>
-            <div className="chat-header">
-              <h1>Hindi Chatbot</h1>
-            </div>
-            <div className="chat-messages" ref={messagesContainerRef}>
-              {messages.map((message, index) => (
-                <div className="message row" key={index}>
-                  <div className='col row'>
-                    <div className='col' style={{ textAlign: "end", paddingTop: "20px" }}>
-                      <div className="message-sender">{message.sender}</div>
-                    </div>
-                    <div className='col avtar-main-box'>
-                      {message.sender === "Bot" ? <img className='avtar' src="./bot.jpg" alt='user-bot' /> : <img className='avtar' src="./userimg.jpg" alt='user-bot' />}
-                    </div>
-                  </div>
-                  <div className='col'>
-                    <div className="message-text">{message.text}</div>
-                  </div>
+    <div className='chat-bot-box' style={{ padding: '0', margin: '0' }}>
+      <div className='container my-1'>
+        <div className="chat-app" style={{ backgroundColor: "white" }}>
+          <div className="chat-header">
+            <h1>Hindi Chatbot</h1>
+          </div>
+          <div className="chat-messages" ref={messagesContainerRef}>
+            {messages.map((message, index) => (
+              <div className="message" key={index}>
+                {/* <div className='col'> */}
+                {/* <div className="message-sender">{message.sender}</div> */}
+                {/* {message.sender === "Bot" ? {backgroundColor:'grey'} : {backgroundColor:'green'}} */}
+                {/* </div> */}
+                <div className='written-message'>
+                  <div className="message-text">{message.text}</div>
                 </div>
-              ))}
-            </div>
-            <div className="chat-input">
-              <input
-                type="text"
-                placeholder="आप अपना सन्देश लिखें "
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
-              <button onClick={submit}>Send</button>
-            </div>
+                <div className="whose-msg">
+                  {message.sender === "Bot" ? <h2>bot</h2> : <h2>user</h2> }
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="chat-input">
+            <input
+              type="text"
+              placeholder="आप अपना सन्देश लिखें "
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <button onClick={submit}>Send</button>
           </div>
         </div>
       </div>
