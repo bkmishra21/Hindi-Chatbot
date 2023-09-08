@@ -131,6 +131,30 @@
     height: 64vh;
 }
 
+/* width */
+.chat-messages::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.chat-messages::-webkit-scrollbar-track {
+  /* background: #941728ff;  */
+  background: #9e9e9e; 
+  border-radius: 3rem;
+
+}
+ 
+/* Handle */
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #941728ff; 
+  border-radius: 3rem;
+}
+
+/* Handle on hover */
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #941728ff; 
+}
+
 .message{
     display: flex;
 }
