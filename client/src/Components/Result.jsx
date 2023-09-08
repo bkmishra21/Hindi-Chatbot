@@ -46,7 +46,7 @@ export default function Result() {
       <div className='container my-1'>
         <div className="chat-app" style={{ backgroundColor: "white" }}>
           <div className="chat-header">
-            <h1>Hindi Chatbot</h1>
+            <h1>Incorporated HWSD model into Chatbot</h1>
           </div>
           <div className="chat-messages" ref={messagesContainerRef}>
             {messages.map((message, index) => (
