@@ -121,14 +121,14 @@
 }
 
 .chat-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
 }
 
 .chat-messages {
     color: #941728ff;
     padding: 0 10px;
     overflow-y: auto;
-    height: 62vh;
+    height: 64vh;
 }
 
 .message{
