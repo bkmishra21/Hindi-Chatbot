@@ -56,7 +56,7 @@ export default function Result() {
                 {/* {message.sender === "Bot" ? {backgroundColor:'grey'} : {backgroundColor:'green'}} */}
                 {/* </div> */}
                 <div className="whose-msg">
-                  {message.sender === "Bot" ? <h2>Bot &nbsp;</h2> : <h2>User</h2> }
+                  {message.sender === "Bot" ? <img style={{width:'1.8rem'}} src="./bot.png" alt="" /> : <img style={{width:'1.8rem'}} src="./hacker.png" alt="" /> }
                 </div>
                 <div className='written-message'>
                   <div className="message-text">{message.text}</div>
