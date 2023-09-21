@@ -10,8 +10,8 @@
 
 # production
 # /build
-/env
-/secondenv
+# /env
+# /secondenv
 # misc
 .DS_Store
 .env.local
