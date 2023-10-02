@@ -164,8 +164,8 @@ app = Flask(__name__, static_url_path='', static_folder='client/build')
 # def Main(sentence):
 #     # sentence = Listen()
     
-#     if sentence == 'bye':
-#         exit()
+#     # if sentence == 'bye':
+#     #     exit()
         
 #     sentence = tokenize(sentence)
 #     X = bag_of_words(sentence,all_words)
