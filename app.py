@@ -219,9 +219,6 @@ def chat():
     return jsonify({"response": response})
     # return jsonify({"response": "response"})
 
-# @app.route('/')
-# def homepage():
-#     return "Homepage"
 
 @app.route('/static/userprofile/<path:filename>')
 def get_photo(filename):
