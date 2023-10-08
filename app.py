@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import random
 import json
@@ -212,6 +213,12 @@ def serve(path):
 def page_not_found(e):
     return send_from_directory(app.static_folder,'index.html')
 
-# Start the Flask app
+
+@app.route('/test')
+def index():
+    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
+
+
